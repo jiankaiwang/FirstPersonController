@@ -14,11 +14,13 @@ public class CharacterController : MonoBehaviour {
     public float speed = 10.0f;
     private float translation;
     private float straffe;
+    public bool cursorLock;
 
     // Use this for initialization
     void Start () {
         // turn off the cursor
-        Cursor.lockState = CursorLockMode.Locked;		
+            cursorLock = true;
+	    Cursor.lockState = CursorLockMode.Locked;		// to Lock Cursor
 	}
 	
 	// Update is called once per frame
@@ -32,6 +34,7 @@ public class CharacterController : MonoBehaviour {
         if (Input.GetKeyDown("escape")) {
             // turn on the cursor
             Cursor.lockState = CursorLockMode.None;
+	    cursorLock = false;
         }
     }
 }
